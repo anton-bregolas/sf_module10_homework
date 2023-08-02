@@ -13,14 +13,14 @@ SF Module 10 Task 3: Websocket API. Geolocation API.
 
 - Requests permission to retrieve geo data upon pressing the "Geolocation" button.
 
-- Geo data is sent to server but response is not displayed (returns obj).
+- Geo data is sent to server but response is not displayed (it's [object GeolocationPosition]).
 
 - A link to Open Street Map with geo data is generated in the chat. Opens in new window.
 
 ## Available commands
 
-/help
-/connect
-/disconnect
+- /help
+- /connect
+- /disconnect
 
 NB: Press Enter after inputting the message for quicker input.
