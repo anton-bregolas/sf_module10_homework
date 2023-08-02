@@ -110,6 +110,10 @@ h1 {
   align-self: flex-start;
 }
 
+.echo {
+  border: 5px solid #ffdc18;
+}
+
 .error {
   border: 5px solid red;
 }
