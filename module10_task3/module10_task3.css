@@ -47,10 +47,10 @@ h1 {
 .chat-container {
   display: flex;
   flex-flow: column;
-  min-width: 630px;
-  min-height: 445px;
-  max-height: fit-content;
+  width: 630px;
+  height: 452px;
   margin: 12px;
+  overflow: hidden;
 }
 
 .input-container {
@@ -63,11 +63,16 @@ h1 {
   display: flex;
   flex-flow: column;
   border: 5px solid yellowgreen;
-  min-height: 375px;
-  max-height: fit-content;
+  height: 375px;
   width: auto;
   margin-top: 12px;
   padding: 12px;
+  overflow-y: auto;
+}
+
+.output-container::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0;
 }
 
 .chat-input {
@@ -87,12 +92,12 @@ h1 {
 }
 
 .bubble {
-  width: 262px;
+  width: 256px;
   border: 5px solid yellowgreen;
   margin-bottom: 12px;
   padding: 12px;
   border-radius: 10px;
-  line-height: 1rem;
+  line-height: 1.2rem;
   text-align: center;
   overflow-wrap: break-word;
 }
