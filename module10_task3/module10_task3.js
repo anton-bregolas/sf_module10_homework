@@ -123,7 +123,13 @@ function sendGeo() {
 
   const geoSuccess = (position) => {
     console.log('Getting coordinates:', position);
-    ws.send(position);
+    if (connected == 1) {
+      ws.send(position);
+    } else {
+      console.log('Cannot send geodata!');
+      showUserMsg("Cannot send geodata!", "error");
+      return;
+    }
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
     
@@ -138,9 +144,12 @@ function sendGeo() {
   if (!navigator.geolocation) {
     console.log('Error getting geolocation data!');
     showUserMsg("Geolocation is not supported", "error");
-  } else {
+  } else if (connected == 1) {
     console.log('Getting geolocation data…');
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+  } else {
+    console.log('Cannot send geodata!');
+    showUserMsg("Not connected to the server!", "error");
   }
 
 }
