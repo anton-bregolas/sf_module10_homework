@@ -125,6 +125,8 @@ function sendGeo() {
     console.log('Getting coordinates:', position);
     if (connected == 1) {
       ws.send(position);
+      console.log('Geolocation sent.');
+      showUserMsg("Geolocation sent", "log");
     } else {
       console.log('Cannot send geodata!');
       showUserMsg("Cannot send geodata!", "error");
@@ -197,6 +199,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initButtons();
 
   listenEnterKey();
+
+  console.log("Initializing the chat.");
+
+  showUserMsg(`
+  Welcome to the demo chat demonstrating the basics of the WebSocket API. Input your message and hit the "Send" button or press Enter to get a response from the server. Press "Geolocation" button to trigger a geolocation request and test-send your coordinates to the server. Type /help to view the list of available commands. The current Echo Server url is:
+  ${websocketURL}`, `welcome`);
   
 });
 
